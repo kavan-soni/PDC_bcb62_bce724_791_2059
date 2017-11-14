@@ -1,0 +1,73 @@
+1. Sudo su
+sudo is intended to run a solitary charge with root benefits. Be that as it may, not at all
+like su it prompts you for the watchword of the present client. This client must be in the
+sudoers document (or a gathering that is in the sudoers record).
+2. ssh localhost
+Setting up a protected association. The charge implies that an association is directed
+to the possess machine, to the present client.
+3. hadoop namenode -format
+Formatting the name node to start a new environment. NameNode is the centerpiece
+of HDFS. NameNode is also known as the Master. NameNode only stores the metadata
+of HDFS the directory tree of all files in the file system, and tracks the files across the
+cluster. NameNode does not store the actual data or the dataset. The data itself is
+actually stored in the DataNodes.
+4. start-all.sh
+Start all the nodes. The $HADOOP_INSTALL/hadoop/bin directory contains some
+scripts used to launch Hadoop DFS and Hadoop Map/Reduce daemons. These are:
+start-dfs.sh - Starts the Hadoop DFS daemons, the namenode, datanodes, the
+jobtracker and tasktrackers.
+5. jps
+Shows all the working nodes. The jps tool lists the instrumented HotSpot Java Virtual
+Machines (JVMs) on the target system. The tool is limited to reporting information on
+JVMs for which it has the access permissions.
+If jps is run without specifying a hostid, it will look for instrumented JVMs on the local
+host. If started with a hostid, it will look for JVMs on the indicated host, using the
+specified protocol and port. A jstatd process is assumed to be running on the target
+host.
+The list of JVMs produced by the jps command may be limited by the permissions
+granted to the principal running the command. The command will only list the JVMs for
+which the principle has access rights as determined by operating system specific access
+control mechanisms.
+6. hadoop dfsadmin -report
+Describes the health and other required aspects.
+7. hadoop dfs -lsr /
+Shows all the files in the hdfs. HDFS supports highly-available (HA) namenode services
+and wire compatibility. These two capabilities make it feasible to upgrade HDFS
+without incurring HDFS downtime. In order to upgrade a HDFS cluster without
+downtime, the cluster must be setup with HA.
+If there is any new feature which is enabled in new software release, may not work with
+old software release after upgrade. In such cases upgrade should be done by following
+steps.
+Disable new feature.
+Upgrade the cluster.
+Enable the new feature.
+8. hadoop dfs -mkdir test
+Makes a new folder. In computer hardware and software development, testing is used
+at key checkpoints in the overall process to determine whether objectives are being
+met. For example, in software development, product objectives are sometimes tested
+by product user representatives. The mkdir command is is used to create new
+directories.
+A directory, referred to as a folder in some operating systems, appears to the user as a
+container for other directories and files.
+9. hadoop dfs -put abc.txt /user/test
+Adds the test file to generate the training data. Copy single src, or multiple srcs from
+local file system to the destination file system. Also reads input from stdin and writes to
+destination file system.
+10. hadoop jar NB_web.jar Template /user/test/abc.txt /user/test/out1
+11.Generates training data. Runs a jar file. Users can bundle their Map Reduce code in a
+jar file and execute it using this command.
+12. hadoop dfs -cat /user/test/out1/part-r-00000
+Shows the output file.
+13. hadoop dfs -rmr /
+Formats the hdfs. Recursive version of delete. If the -skipTrash option is specified, the
+trash, if enabled, will be bypassed and the specified file(s) deleted immediately. This
+can be useful when it is necessary to delete files from an over-quota directory.
+14. stop-all.sh
+Stops all the nodes. Used to stop hadoop daemons all at once. Issuing it on the master
+machine will start/stop the daemons on all the nodes of a cluster. Deprecated as you
+have already noticed.
+15. Exit
+exit is a command used in many operating system command line shells and scripting
+languages. The command causes the shell or program to terminate. If performed within
+an interactive command shell, the user is logged out of their current session, and/or
+user's current console or terminal connection is disconnected.
